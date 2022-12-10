@@ -1,0 +1,13 @@
+name: No docs
+on: workflow_dispatch
+jobs:
+  Installdeps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install CLI
+        run: npm i https://github.com/pnp/cli-microsoft365/files/10200056/pnp-cli-microsoft365-6.1.0-nodocs.tgz
